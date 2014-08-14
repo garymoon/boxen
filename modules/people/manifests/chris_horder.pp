@@ -1,13 +1,13 @@
 class people::chris_horder {
   include tunnelblick
   include keepassx
-  include sublime_text_2
+  include sublime_text
   include tmux
   include evernote 
   include vlc
   # include redis
   include iterm2::stable
-  # include memcached
+  include java
   include vagrant
   include virtualbox
   include eclipse::java
@@ -22,13 +22,6 @@ class people::chris_horder {
   $my       = "${home}/my"
   $dotfiles = "${my}/dotfiles"
 
-  class { 'redis' :
-    enable => false
-  }
-  
-  class { 'memcached' :
-    enable => false
-  }
   
   file { $my:
     ensure  => directory
@@ -54,11 +47,11 @@ class people::chris_horder {
     ruby         => 'system'
   }
  
-  file { "/usr/local/bin/subl" :
-    ensure  => link,
-    target  => '/Applications/Sublime Text 2.app/Contents/SharedSupport/bin/subl',
-    require => 'Class[sublime_text_2]'
-  }
+  #file { "/usr/local/bin/subl" :
+  #  ensure  => link,
+  #  target  => '/Applications/Sublime Text 2.app/Contents/SharedSupport/bin/subl',
+  #  require => 'Class[sublime_text_2]'
+  #}
 
   repository { $dotfiles:
    source  => 'chris-horder/dotfiles',
