@@ -4,6 +4,11 @@ GITHUBTARBALL
     boxen (3.4.2)
 
 GITHUBTARBALL
+  remote: boxen/puppet-calibre
+  specs:
+    calibre (3.1.0)
+
+GITHUBTARBALL
   remote: boxen/puppet-chicken_of_the_vnc
   specs:
     chicken_of_the_vnc (0.1.2)
@@ -185,6 +190,7 @@ GITHUBTARBALL
 
 DEPENDENCIES
   boxen (= 3.4.2)
+  calibre (>= 0)
   chicken_of_the_vnc (= 0.1.2)
   cyberduck (>= 0)
   dnsmasq (= 1.0.1)

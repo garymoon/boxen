@@ -5,6 +5,7 @@ class people::chris_horder {
   include tmux
   include evernote 
   include vlc
+  include calibre
   # include redis
   include iterm2::stable
   include java
@@ -31,7 +32,7 @@ class people::chris_horder {
     ensure => installed,
   }
 
-  package { ['htop', 'ipcalc', 'aspell', 'lftp', 'tree', 'git-flow', 'gradle', 'pwgen', 'wireshark', 'unrar', 'youtube-dl', 'mtr'] :
+  package { ['wget', 'htop', 'ipcalc', 'aspell', 'lftp', 'tree', 'git-flow', 'gradle', 'pwgen', 'wireshark', 'unrar', 'youtube-dl', 'mtr'] :
     ensure => installed,
   }
 
@@ -40,6 +41,7 @@ class people::chris_horder {
     provider  => 'pip',
     require   => 'Package[python]'
   }
+  #Add "complete -C aws_completer aws” to was cli install
 
   ruby::gem { 'tmuxinator for all rubies':
     gem          => 'tmuxinator',
